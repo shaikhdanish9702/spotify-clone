@@ -20,13 +20,7 @@ body{
     top: 3px;
     left: 4px;
 }
-.songposter img{
-    position: absolute;
-    top: 250px;
-    left: 500px;
-    height: 300px;
-    border: 4px solid black;
-}
+
 nav ul{
     display: flex;
     color: azure;
@@ -98,6 +92,7 @@ nav ul .logo img{
 }
 .songlist span,.songlist span i{
     color: black;
+    /* opacity: 3; */
     font-weight: 600;
 }
 .songlist span i{
@@ -109,6 +104,7 @@ nav ul .logo img{
     /* margin: 0 23px; */
     border-radius: 45px;
 }
+
 
 .bottom{
     position: sticky;
@@ -146,3 +142,47 @@ div.songplayer{
     /* opacity: 0;
     transition: opacity 1s ease-in; */
 }
+#disp{
+    height: 260px;
+    width: 260px;
+    border: 15px solid rgb(9, 6, 6);
+    border-radius: 50%;
+    
+}
+.disc{
+    animation: animate 20s linear infinite;
+        transform-origin: center center;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.songposter img {
+    position: absolute;
+    top: 250px;
+    left: 420px;
+}
+@media only screen and (max-width: 700px) {
+    #disp{
+        display: none;
+    }
+        
+}
+@media only screen and (min-width: 809px) {
+    .songposter img {
+        position: absolute;
+        left:500px
+    }
+}
+@media only screen and (max-width: 600px){
+#clock{
+display: none;
+}
+}
+
