@@ -1,10 +1,12 @@
 // import audioElment from '.../songs';
 console.log("welcome to spotify");
-let songindex = 0;
+let songindex = 1;
 let audioElment = new Audio("./songs/1.mp3");
 let masterplay = document.getElementById('play');
 let progessbar = document.getElementById('songbar');
 let gif = document.getElementById('gif');
+let disp = document.getElementById('disp');
+
 
 // let songItems = Array.from(document.getElementsByClassName('songlist'));
 
@@ -31,22 +33,172 @@ masterplay.addEventListener('click', () => {
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
         gif.style.opacity = 1;
+        if (songindex === 1) {
+         const box = document.getElementById('song1');
 
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    
     } else {
          audioElment.pause();
         masterplay.classList.remove('fa-circle-pause');
         masterplay.classList.add('fa-circle-play');
-         gif.style.opacity = 0;
+        gif.style.opacity = 0;
+        
     }
 })
+function myFunction() {
+  if (audioElment.paused || audioElment.currentTime <= 0) {
+    let element = document.getElementById("disp");
+    element.classList.add("disc");
+  } else {
+     let element = document.getElementById("disp");
+    element.classList.remove("disc");
+    
+  }
+}
 // listen to event
 audioElment.addEventListener('timeupdate', () => {
     progess = parseInt((audioElment.currentTime / audioElment.duration) * 100);
     progessbar.value = progess;
 })
+function playSong(songindex) {
+    if (songindex === 1) {
+            audioElment.src = 'songs/1.mp3';
+            disp.src="./cover/1.jpg";
+        } else if (songindex === 2) {
+            audioElment.src = 'songs/2.mp3';
+            disp.src="./cover/2.jpg";
+        }
+        else if (songindex === 3) {
+            audioElment.src = 'songs/3.mp3';
+            disp.src="./cover/3.jpg";
+        }
+        else if (songindex === 4) {
+            audioElment.src = 'songs/4.mp3';
+            disp.src="./cover/4.jpg";
+        }
+        else if (songindex === 5) {
+            audioElment.src = 'songs/5.mp3';
+            disp.src="./cover/5.jpg";
+        }
+        else if (songindex === 6) {
+            audioElment.src = 'songs/6.mp3';
+            disp.src="./cover/6.jpg";
+        }
+        else if (songindex ===7) {
+            audioElment.src = 'songs/7.mp3';
+            disp.src="./cover/7.jpg";
+        }
+        else if (songindex === 8) {
+            audioElment.src = 'songs/8.mp3';
+            disp.src="./cover/8.jpg";
+        }
+        if (songindex === 1) {
+         const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 2) {
+         const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 3) {
+         const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 4) {
+         const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 5) {
+         const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 6) {
+         const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 7) {
+         const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 8) {
+         const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+gif.style.opacity = 1;
+        audioElment.currentTime = 0;
+        audioElment.play();
+        masterplay.classList.remove('fa-circle-play');
+        masterplay.classList.add('fa-circle-pause');
+  
+}
+audioElment.addEventListener("ended", function playNextS() {
+    songindex=songindex+1;
+    if (songindex == 9) {
+        songindex = 1;
+        playSong(songindex);
+    } else {
+        playSong(songindex)
+    }
+})
 progessbar.addEventListener('change', () => {
     audioElment.currentTime = progessbar.value * audioElment.duration/100;
 })
+
 const makeAllplays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) => {
 
@@ -55,6 +207,8 @@ const makeAllplays = ()=>{
     })
     
 }
+
+// songItem list
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e) => {
         makeAllplays();
@@ -63,27 +217,115 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.add('fa-circle-pause');
         if (songindex === 1) {
             audioElment.src = 'songs/1.mp3';
+            disp.src="./cover/1.jpg";
         } else if (songindex === 2) {
             audioElment.src = 'songs/2.mp3';
+            disp.src="./cover/2.jpg";
         }
         else if (songindex === 3) {
             audioElment.src = 'songs/3.mp3';
+            disp.src="./cover/3.jpg";
         }
         else if (songindex === 4) {
             audioElment.src = 'songs/4.mp3';
+            disp.src="./cover/4.jpg";
         }
         else if (songindex === 5) {
             audioElment.src = 'songs/5.mp3';
+            disp.src="./cover/5.jpg";
         }
         else if (songindex === 6) {
             audioElment.src = 'songs/6.mp3';
+            disp.src="./cover/6.jpg";
         }
         else if (songindex ===7) {
             audioElment.src = 'songs/7.mp3';
+            disp.src="./cover/7.jpg";
         }
         else if (songindex === 8) {
             audioElment.src = 'songs/8.mp3';
+            disp.src="./cover/8.jpg";
         }
+        if (songindex === 1) {
+         const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 2) {
+         const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 3) {
+         const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 4) {
+         const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 5) {
+         const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 6) {
+         const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 7) {
+         const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 8) {
+         const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'white';
+        
+    }
 gif.style.opacity = 1;
         audioElment.currentTime = 0;
         audioElment.play();
@@ -91,6 +333,8 @@ gif.style.opacity = 1;
         masterplay.classList.add('fa-circle-pause');
     })
 })
+
+// next button
 document.getElementById('next').addEventListener('click', () => {
     if (songindex > 7) {
         songindex = 1;
@@ -99,34 +343,125 @@ document.getElementById('next').addEventListener('click', () => {
     }
     makeAllplays();
     if (songindex === 1) {
-            audioElment.src = 'songs/1.mp3';
+        audioElment.src = 'songs/1.mp3';
+        disp.src="./cover/1.jpg";
         } else if (songindex === 2) {
-            audioElment.src = 'songs/2.mp3';
+        audioElment.src = 'songs/2.mp3';
+        disp.src="./cover/2.jpg";
         }
         else if (songindex === 3) {
-            audioElment.src = 'songs/3.mp3';
+        audioElment.src = 'songs/3.mp3';
+        disp.src="./cover/3.jpg";
         }
         else if (songindex === 4) {
-            audioElment.src = 'songs/4.mp3';
+        audioElment.src = 'songs/4.mp3';
+        disp.src="./cover/4.jpg";
         }
         else if (songindex === 5) {
-            audioElment.src = 'songs/5.mp3';
+        audioElment.src = 'songs/5.mp3';
+        disp.src="./cover/5.jpg";
         }
         else if (songindex === 6) {
-            audioElment.src = 'songs/6.mp3';
+        audioElment.src = 'songs/6.mp3';
+        disp.src="./cover/6.jpg";
         }
         else if (songindex ===7) {
-            audioElment.src = 'songs/7.mp3';
+        audioElment.src = 'songs/7.mp3';
+        disp.src="./cover/7.jpg";
         }
         else if (songindex === 8) {
-            audioElment.src = 'songs/8.mp3';
-        }
+        audioElment.src = 'songs/8.mp3';
+        disp.src="./cover/8.jpg";
+    }
+    if (songindex === 1) {
+         const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 2) {
+         const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 3) {
+         const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 4) {
+         const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 5) {
+         const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 6) {
+         const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 7) {
+         const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 8) {
+         const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'white';
+        
+    }
 gif.style.opacity = 1;
         audioElment.currentTime = 0;
         audioElment.play();
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
 })
+
+
+// previous button 
 document.getElementById('previous').addEventListener('click', () => {
     if (songindex <=1) {
         songindex = 8;
@@ -135,31 +470,145 @@ document.getElementById('previous').addEventListener('click', () => {
     }
     makeAllplays();
     if (songindex === 1) {
-            audioElment.src = 'songs/1.mp3';
+        audioElment.src = 'songs/1.mp3';
+        disp.src = "./cover/1.jpg";
         } else if (songindex === 2) {
-            audioElment.src = 'songs/2.mp3';
+        audioElment.src = 'songs/2.mp3';
+        disp.src = "./cover/2.jpg";
         }
         else if (songindex === 3) {
-            audioElment.src = 'songs/3.mp3';
+        audioElment.src = 'songs/3.mp3';
+        disp.src="./cover/3.jpg";
         }
         else if (songindex === 4) {
-            audioElment.src = 'songs/4.mp3';
+        audioElment.src = 'songs/4.mp3';
+        disp.src="./cover/4.jpg";
         }
         else if (songindex === 5) {
-            audioElment.src = 'songs/5.mp3';
+        audioElment.src = 'songs/5.mp3';
+        disp.src="./cover/5.jpg";
         }
         else if (songindex === 6) {
-            audioElment.src = 'songs/6.mp3';
+        audioElment.src = 'songs/6.mp3';
+        disp.src="./cover/6.jpg";
         }
         else if (songindex ===7) {
-            audioElment.src = 'songs/7.mp3';
+        audioElment.src = 'songs/7.mp3';
+        disp.src="./cover/7.jpg";
         }
         else if (songindex === 8) {
-            audioElment.src = 'songs/8.mp3';
-        }
+        audioElment.src = 'songs/8.mp3';
+        disp.src="./cover/8.jpg";
+    }
+    if (songindex === 1) {
+         const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song1');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 2) {
+         const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song2');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 3) {
+         const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song3');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 4) {
+         const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song4');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 5) {
+         const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song5');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 6) {
+         const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song6');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 7) {
+         const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song7');
+
+  box.style.backgroundColor = 'white';
+        
+    }
+    if (songindex === 8) {
+        const box = document.getElementById('song8');
+
+
+  box.style.backgroundColor = 'brown';
+    } else {
+        const box = document.getElementById('song8');
+
+  box.style.backgroundColor = 'white';
+        
+    }
 gif.style.opacity = 1;
         audioElment.currentTime = 0;
         audioElment.play();
         masterplay.classList.remove('fa-circle-play');
         masterplay.classList.add('fa-circle-pause');
 })
+let hours;
+let date;
+let minutes;
+let second;
+let ampm;
+let day;
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let myClock=setInterval(() => {
+    date = new Date();
+    hours = date.getHours();
+    minutes = date.getMinutes();
+    second = date.getSeconds();
+   ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+    hours = hours ? hours : 12;
+    hours = hours <= 9 ? '0' + hours : hours;
+    second = second <= 9 ? '0' + second : second;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    day = weekday[date.getDay()];
+    time = `${hours}:${minutes}:${second}:${ampm}`;
+    time=time+" "+day
+    document.getElementById('clock').innerHTML=time;
+}, 1000);
+
+
