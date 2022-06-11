@@ -6,7 +6,7 @@ let masterplay = document.getElementById('play');
 let progessbar = document.getElementById('songbar');
 let gif = document.getElementById('gif');
 let disp = document.getElementById('disp');
-
+let currentplay = document.getElementById("currentplay");
 
 // let songItems = Array.from(document.getElementsByClassName('songlist'));
 
@@ -70,34 +70,42 @@ audioElment.addEventListener('timeupdate', () => {
 function playSong(songindex) {
     if (songindex === 1) {
             audioElment.src = 'songs/1.mp3';
-            disp.src="./cover/1.jpg";
+      disp.src = "./cover/1.jpg";
+      currentplay.innerHTML = "Ek tu hi toh hai";
         } else if (songindex === 2) {
             audioElment.src = 'songs/2.mp3';
-            disp.src="./cover/2.jpg";
+      disp.src = "./cover/2.jpg";
+      currentplay.innerHTML = "Meri jaan";
         }
         else if (songindex === 3) {
             audioElment.src = 'songs/3.mp3';
-            disp.src="./cover/3.jpg";
+      disp.src = "./cover/3.jpg";
+      currentplay.innerHTML = "Srivalli";
         }
         else if (songindex === 4) {
             audioElment.src = 'songs/4.mp3';
-            disp.src="./cover/4.jpg";
+      disp.src = "./cover/4.jpg";
+      currentplay.innerHTML = "Oo antava ma";
         }
         else if (songindex === 5) {
             audioElment.src = 'songs/5.mp3';
-            disp.src="./cover/5.jpg";
+      disp.src = "./cover/5.jpg";
+      currentplay.innerHTML = "Saami Saami";
         }
         else if (songindex === 6) {
             audioElment.src = 'songs/6.mp3';
-            disp.src="./cover/6.jpg";
+      disp.src = "./cover/6.jpg";
+      currentplay.innerHTML = "Makeup wala";
         }
         else if (songindex ===7) {
             audioElment.src = 'songs/7.mp3';
-            disp.src="./cover/7.jpg";
+      disp.src = "./cover/7.jpg";
+      currentplay.innerHTML = "Arabic kuthu";
         }
         else if (songindex === 8) {
             audioElment.src = 'songs/8.mp3';
-            disp.src="./cover/8.jpg";
+      disp.src = "./cover/8.jpg";
+      currentplay.innerHTML = "Raataan lambiya";
         }
         if (songindex === 1) {
          const box = document.getElementById('song1');
@@ -217,34 +225,42 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         e.target.classList.add('fa-circle-pause');
         if (songindex === 1) {
             audioElment.src = 'songs/1.mp3';
-            disp.src="./cover/1.jpg";
+          disp.src = "./cover/1.jpg";
+          currentplay.innerHTML = "Ek tu hi toh hai";
         } else if (songindex === 2) {
             audioElment.src = 'songs/2.mp3';
-            disp.src="./cover/2.jpg";
+          disp.src = "./cover/2.jpg";
+          currentplay.innerHTML = "Meri jaan";
         }
         else if (songindex === 3) {
             audioElment.src = 'songs/3.mp3';
-            disp.src="./cover/3.jpg";
+          disp.src = "./cover/3.jpg";
+          currentplay.innerHTML = "Srivalli";
         }
         else if (songindex === 4) {
             audioElment.src = 'songs/4.mp3';
-            disp.src="./cover/4.jpg";
+          disp.src = "./cover/4.jpg";
+          currentplay.innerHTML = "Oo antava ma";
         }
         else if (songindex === 5) {
             audioElment.src = 'songs/5.mp3';
-            disp.src="./cover/5.jpg";
+          disp.src = "./cover/5.jpg";
+          currentplay.innerHTML = "Saami Saami";
         }
         else if (songindex === 6) {
             audioElment.src = 'songs/6.mp3';
-            disp.src="./cover/6.jpg";
+          disp.src = "./cover/6.jpg";
+          currentplay.innerHTML = "Makeup wala";
         }
         else if (songindex ===7) {
             audioElment.src = 'songs/7.mp3';
-            disp.src="./cover/7.jpg";
+          disp.src = "./cover/7.jpg";
+          currentplay.innerHTML = "Arabic kuthu";
         }
         else if (songindex === 8) {
             audioElment.src = 'songs/8.mp3';
-            disp.src="./cover/8.jpg";
+          disp.src = "./cover/8.jpg";
+          currentplay.innerHTML = "Raataan lambiya";
         }
         if (songindex === 1) {
          const box = document.getElementById('song1');
@@ -344,34 +360,42 @@ document.getElementById('next').addEventListener('click', () => {
     makeAllplays();
     if (songindex === 1) {
         audioElment.src = 'songs/1.mp3';
-        disp.src="./cover/1.jpg";
+      disp.src = "./cover/1.jpg";
+      currentplay.innerHTML = "Ek tu hi toh hai";
         } else if (songindex === 2) {
         audioElment.src = 'songs/2.mp3';
-        disp.src="./cover/2.jpg";
+      disp.src = "./cover/2.jpg";
+      currentplay.innerHTML = "Meri jaan";
         }
         else if (songindex === 3) {
         audioElment.src = 'songs/3.mp3';
-        disp.src="./cover/3.jpg";
+      disp.src = "./cover/3.jpg";
+      currentplay.innerHTML = "Srivalli";
         }
         else if (songindex === 4) {
         audioElment.src = 'songs/4.mp3';
-        disp.src="./cover/4.jpg";
+      disp.src = "./cover/4.jpg";
+      currentplay.innerHTML = "Oo antava ma";
         }
         else if (songindex === 5) {
         audioElment.src = 'songs/5.mp3';
-        disp.src="./cover/5.jpg";
+      disp.src = "./cover/5.jpg";
+      currentplay.innerHTML = "Saami Saami";
         }
         else if (songindex === 6) {
         audioElment.src = 'songs/6.mp3';
-        disp.src="./cover/6.jpg";
+      disp.src = "./cover/6.jpg";
+      currentplay.innerHTML = "Makeup wala";
         }
         else if (songindex ===7) {
         audioElment.src = 'songs/7.mp3';
-        disp.src="./cover/7.jpg";
+      disp.src = "./cover/7.jpg";
+      currentplay.innerHTML = "Arabic kuthu";
         }
         else if (songindex === 8) {
         audioElment.src = 'songs/8.mp3';
-        disp.src="./cover/8.jpg";
+      disp.src = "./cover/8.jpg";
+      currentplay.innerHTML = "Raataan lambiya";
     }
     if (songindex === 1) {
          const box = document.getElementById('song1');
@@ -471,34 +495,43 @@ document.getElementById('previous').addEventListener('click', () => {
     makeAllplays();
     if (songindex === 1) {
         audioElment.src = 'songs/1.mp3';
-        disp.src = "./cover/1.jpg";
+      disp.src = "./cover/1.jpg";
+      currentplay.innerHTML = "Ek tu hi toh hai";
         } else if (songindex === 2) {
         audioElment.src = 'songs/2.mp3';
-        disp.src = "./cover/2.jpg";
+      disp.src = "./cover/2.jpg";
+      currentplay.innerHTML = "Meri jaan";
         }
         else if (songindex === 3) {
         audioElment.src = 'songs/3.mp3';
-        disp.src="./cover/3.jpg";
+      disp.src = "./cover/3.jpg";
+      currentplay.innerHTML = "Srivalli";
         }
         else if (songindex === 4) {
         audioElment.src = 'songs/4.mp3';
-        disp.src="./cover/4.jpg";
+      disp.src = "./cover/4.jpg";
+      currentplay.innerHTML = "Oo antava ma";
         }
         else if (songindex === 5) {
         audioElment.src = 'songs/5.mp3';
-        disp.src="./cover/5.jpg";
+      disp.src = "./cover/5.jpg";
+      currentplay.innerHTML = "Saami Saami";
         }
         else if (songindex === 6) {
         audioElment.src = 'songs/6.mp3';
-        disp.src="./cover/6.jpg";
+      disp.src = "./cover/6.jpg";
+      currentplay.innerHTML = "Makeup wala";
         }
         else if (songindex ===7) {
         audioElment.src = 'songs/7.mp3';
-        disp.src="./cover/7.jpg";
+      disp.src = "./cover/7.jpg";
+      currentplay.innerHTML = "Arabic kuthu";
+      
         }
         else if (songindex === 8) {
         audioElment.src = 'songs/8.mp3';
-        disp.src="./cover/8.jpg";
+      disp.src = "./cover/8.jpg";
+      currentplay.innerHTML = "Raataan lambiya";
     }
     if (songindex === 1) {
          const box = document.getElementById('song1');
