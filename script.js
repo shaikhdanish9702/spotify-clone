@@ -65,7 +65,13 @@ function myFunction() {
 // listen to event
 audioElment.addEventListener('timeupdate', () => {
     progess = parseInt((audioElment.currentTime / audioElment.duration) * 100);
-    progessbar.value = progess;
+  progessbar.value = progess;
+  var mins = Math.floor(audioElment.currentTime / 60);
+      var secs = Math.floor(audioElment.currentTime % 60);
+      if (secs < 10) {
+        secs = '0' + String(secs);
+      }
+      timer.innerHTML = mins + ':' + secs;
 })
 function playSong(songindex) {
     if (songindex === 1) {
